@@ -1,0 +1,31 @@
+\documentclass[ngerman,aspectratio=169]{beamer}
+\usepackage[utf8]{luainputenc}
+\usepackage[TS1,T1]{fontenc}
+\usepackage{babel}
+\usetheme[pagenum,navbar,ddc]{tud}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{tikz}
+
+\newcommand{\theory}[1]{\text{Th(} #1 \text{)}}
+\newcommand{\lang}[1]{\text{L(}#1{)}}
+
+\title{TUN/TAP-Geräte\protect\\\mdseries Übersicht, Funktionsweise und Implementierung im Linux-Kernel\strut}
+\subtitle{Proseminar Rechnernetze}
+\author{Lucas Waclawczyk}
+
+\newcommand*\inmm[1]{\pgfmathsetmacro\inmmwert{#1 / 1mm}\inmmwert}
+\makeatletter
+\newcommand*\inpt[1]{\setlength\@tempdima{#1}\the\@tempdima}
+\makeatother
+
+\AtBeginSection[]{\partpage{\usebeamertemplate***{part page}}}
+\begin{document}
+	\mode<presentation>{\setbeamertemplate{tud background}[image/shaded]{Seminarraum.jpg}{0.7}}
+	\maketitle
+	
+	\mode<presentation>{\setbeamertemplate{page number in footline}[frame][text and total]}
+	\frame{\frametitle{Inhalt}\tableofcontents}
+	
+	\section{Übersicht}
+\end{document}
