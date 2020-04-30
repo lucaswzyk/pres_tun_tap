@@ -1,2 +1,3 @@
 # pres_decidability
-Sources and LaTeX code for my presentation about the decidability of logical theories
+LaTeX and pdf for my presentation "TUN/TAP-Geräte - Übersicht, Funktionsweise und Implementierung im
+Linux-Kernel"
