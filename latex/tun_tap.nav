@@ -13,52 +13,41 @@
 \headcommand {\beamer@framepages {4}{8}}
 \headcommand {\beamer@subsectionpages {4}{8}}
 \headcommand {\beamer@subsectionentry {0}{1}{2}{9}{Generelles zu TUN und TAP}}
-\headcommand {\slideentry {1}{2}{1}{9/12}{Generelles zu TUN und TAP}{0}}
-\headcommand {\beamer@framepages {9}{12}}
-\headcommand {\beamer@subsectionpages {9}{12}}
-\headcommand {\beamer@subsectionentry {0}{1}{3}{13}{Vor- und Nachteile}}
-\headcommand {\slideentry {1}{3}{1}{13/21}{Vor- und Nachteile}{0}}
-\headcommand {\beamer@framepages {13}{21}}
-\headcommand {\beamer@sectionpages {3}{21}}
-\headcommand {\beamer@subsectionpages {13}{21}}
-\headcommand {\sectionentry {2}{Funktionsweise}{22}{Funktionsweise}{0}}
-\headcommand {\slideentry {2}{0}{1}{22/22}{}{0}}
-\headcommand {\beamer@framepages {22}{22}}
-\headcommand {\beamer@subsectionpages {22}{22}}
-\headcommand {\beamer@subsectionentry {0}{2}{1}{23}{Set Up}}
-\headcommand {\slideentry {2}{1}{1}{23/28}{Set Up}{0}}
-\headcommand {\beamer@framepages {23}{28}}
-\headcommand {\beamer@subsectionpages {23}{28}}
-\headcommand {\beamer@subsectionentry {0}{2}{2}{29}{Workflow}}
-\headcommand {\slideentry {2}{2}{1}{29/30}{Workflow}{0}}
-\headcommand {\beamer@framepages {29}{30}}
-\headcommand {\beamer@subsectionpages {29}{30}}
-\headcommand {\beamer@subsectionentry {0}{2}{3}{31}{Tear Down}}
-\headcommand {\slideentry {2}{3}{1}{31/31}{Tear Down}{0}}
-\headcommand {\beamer@framepages {31}{31}}
-\headcommand {\beamer@sectionpages {22}{31}}
-\headcommand {\beamer@subsectionpages {31}{31}}
-\headcommand {\sectionentry {3}{Implementierung}{32}{Implementierung}{0}}
-\headcommand {\slideentry {3}{0}{1}{32/32}{}{0}}
-\headcommand {\beamer@framepages {32}{32}}
-\headcommand {\beamer@subsectionpages {32}{32}}
-\headcommand {\beamer@subsectionentry {0}{3}{1}{33}{Wo findet man das?}}
-\headcommand {\slideentry {3}{1}{1}{33/33}{Wo findet man das?}{0}}
-\headcommand {\beamer@framepages {33}{33}}
-\headcommand {\beamer@subsectionpages {33}{33}}
-\headcommand {\beamer@subsectionentry {0}{3}{2}{34}{Code}}
-\headcommand {\slideentry {3}{2}{1}{34/34}{Code}{0}}
+\headcommand {\slideentry {1}{2}{1}{9/13}{Generelles zu TUN und TAP}{0}}
+\headcommand {\beamer@framepages {9}{13}}
+\headcommand {\beamer@subsectionpages {9}{13}}
+\headcommand {\beamer@subsectionentry {0}{1}{3}{14}{TUN vs. TAP}}
+\headcommand {\slideentry {1}{3}{1}{14/22}{TUN vs. TAP}{0}}
+\headcommand {\beamer@framepages {14}{22}}
+\headcommand {\beamer@sectionpages {3}{22}}
+\headcommand {\beamer@subsectionpages {14}{22}}
+\headcommand {\sectionentry {2}{Implementierung in Linux}{23}{Implementierung in Linux}{0}}
+\headcommand {\slideentry {2}{0}{1}{23/23}{}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\beamer@subsectionpages {23}{23}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{24}{Wichtige Adressen}}
+\headcommand {\slideentry {2}{1}{1}{24/24}{Wichtige Adressen}{0}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\beamer@subsectionpages {24}{24}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{25}{Aufbau -- Nutzung -- Abbau}}
+\headcommand {\slideentry {2}{2}{1}{25/30}{Aufbau -- Nutzung -- Abbau}{0}}
+\headcommand {\beamer@framepages {25}{30}}
+\headcommand {\slideentry {2}{2}{2}{31/33}{Aufbau -- Nutzung -- Abbau}{0}}
+\headcommand {\beamer@framepages {31}{33}}
+\headcommand {\beamer@subsectionpages {25}{33}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{34}{Umsetzung als Structs}}
+\headcommand {\slideentry {2}{3}{1}{34/34}{Umsetzung als Structs}{0}}
 \headcommand {\beamer@framepages {34}{34}}
-\headcommand {\beamer@sectionpages {32}{34}}
+\headcommand {\beamer@sectionpages {23}{34}}
 \headcommand {\beamer@subsectionpages {34}{34}}
-\headcommand {\sectionentry {4}{Quellen}{35}{Quellen}{0}}
-\headcommand {\slideentry {4}{0}{1}{35/35}{}{0}}
+\headcommand {\sectionentry {3}{Quellen}{35}{Quellen}{0}}
+\headcommand {\slideentry {3}{0}{1}{35/35}{}{0}}
 \headcommand {\beamer@framepages {35}{35}}
-\headcommand {\slideentry {4}{0}{2}{36/36}{}{0}}
+\headcommand {\slideentry {3}{0}{2}{36/36}{}{0}}
 \headcommand {\beamer@framepages {36}{36}}
 \headcommand {\beamer@partpages {1}{36}}
 \headcommand {\beamer@subsectionpages {35}{36}}
 \headcommand {\beamer@sectionpages {35}{36}}
 \headcommand {\beamer@documentpages {36}}
-\headcommand {\gdef \inserttotalframenumber {15}}
-\headcommand {\tudbeamersetpagenumberwidths {15}{37}}
+\headcommand {\gdef \inserttotalframenumber {13}}
+\headcommand {\tudbeamersetpagenumberwidths {13}{37}}

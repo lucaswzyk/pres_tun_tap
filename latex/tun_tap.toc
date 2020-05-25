@@ -2,12 +2,9 @@
 \beamer@sectionintoc {1}{Übersicht}{3}{0}{1}
 \beamer@subsectionintoc {1}{1}{Rückblick Network Interfaces}{4}{0}{1}
 \beamer@subsectionintoc {1}{2}{Generelles zu TUN und TAP}{9}{0}{1}
-\beamer@subsectionintoc {1}{3}{Vor- und Nachteile}{13}{0}{1}
-\beamer@sectionintoc {2}{Funktionsweise}{22}{0}{2}
-\beamer@subsectionintoc {2}{1}{Set Up}{23}{0}{2}
-\beamer@subsectionintoc {2}{2}{Workflow}{29}{0}{2}
-\beamer@subsectionintoc {2}{3}{Tear Down}{31}{0}{2}
-\beamer@sectionintoc {3}{Implementierung}{32}{0}{3}
-\beamer@subsectionintoc {3}{1}{Wo findet man das?}{33}{0}{3}
-\beamer@subsectionintoc {3}{2}{Code}{34}{0}{3}
-\beamer@sectionintoc {4}{Quellen}{35}{0}{4}
+\beamer@subsectionintoc {1}{3}{TUN vs. TAP}{14}{0}{1}
+\beamer@sectionintoc {2}{Implementierung in Linux}{23}{0}{2}
+\beamer@subsectionintoc {2}{1}{Wichtige Adressen}{24}{0}{2}
+\beamer@subsectionintoc {2}{2}{Aufbau -- Nutzung -- Abbau}{25}{0}{2}
+\beamer@subsectionintoc {2}{3}{Umsetzung als Structs}{34}{0}{2}
+\beamer@sectionintoc {3}{Quellen}{35}{0}{3}

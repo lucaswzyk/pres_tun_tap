@@ -1,0 +1,19 @@
+\frametitle{Umsetzung als Structs}
+Auszug aus \texttt{/linux/drivers/net/tun.c}:
+		
+		\hspace{-5cm}
+		\begin{minipage}{\textwidth}
+			\begin{lstlisting}
+			struct tun_struct {
+				struct tun_file __rcu *tfiles[MAX_TAP_QUEUES];
+				unsigned int flags;
+				kuid_t owner;
+				kuid_t group;
+				struct net_device *dev;
+			}
+			
+			struct tun_file {
+				struct tun_struct __rcu *tun;
+			}
+			\end{lstlisting}
+		\end{minipage}

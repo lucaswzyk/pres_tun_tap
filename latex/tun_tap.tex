@@ -10,8 +10,22 @@
 \usepackage[labelformat=empty,font=scriptsize]{caption}
 \usepackage{marvosym}
 
-\newcommand{\theory}[1]{\text{Th(} #1 \text{)}}
-\newcommand{\lang}[1]{\text{L(}#1{)}}
+\lstset{language=C}
+\lstdefinestyle{mystyle}{
+	language=C,
+	basicstyle=\ttfamily\footnotesize,
+	commentstyle=\color{commentgreen},
+	keywordstyle=\color{code_orange},
+	numberstyle=\tiny\color{code_gray},
+	stringstyle=\color{code_purple},
+	showstringspaces=false,
+	breakatwhitespace=true,      
+	prebreak=...,   
+	breaklines=true,                      
+	numbers=left,                    
+	numbersep=5pt,  
+	tabsize=1
+}
 
 \title{TUN/TAP-Geräte \protect\\\mdseries Übersicht, Funktionsweise und Implementierung im Linux-Kernel\strut}
 \subtitle{Proseminar Rechnernetze}
@@ -54,13 +68,16 @@
 			\end{multicols}
 		}
 		\only<4>{
-			\centering \includegraphics[width=.8\textwidth]{interfaces01}%
+			\begin{figure}
+				\includegraphics[width=.77\textwidth]{interfaces01}
+				\caption{Network Interfaces relativ zu Gerät und Netz am Beispiel}
+			\end{figure}
 		}
 	\end{frame}
 
 	\subsection{Generelles zu TUN und TAP}
 	\begin{frame}{Generelles zu TUN und TAP}
-		\only<1,2,4->{
+		\only<1,2,5->{
 			\begin{itemize}
 				\item Virtual Network Interfaces, d.h. man kann
 				\begin{itemize}
@@ -71,31 +88,41 @@
 				\end{itemize}
 				\visible<2,4->{
 					\item \textit{Interface $ \leftrightarrow $ Anwendung} \:\: statt \:\: \textit{Interface $ \leftrightarrow $ physische Verbindung}
+					\item nützlich für virtuelle Verbindungen
 				}
-				\visible<4->{
+				\visible<5->{
 					\item u. A. Linux, Windows 2000 - 10, Mac OS X (nur TUN eingebaut)
 					\item hier für Linux
 				}
 			\end{itemize}
 		}
 		\only<3>{
-			\centering \includegraphics[width=.8\linewidth]{connection}%
+			\begin{figure}
+				\includegraphics[width=.8\linewidth]{connection_physical}
+				\caption{Schema einer virtuellen Verbindung (physische Ansicht)}
+			\end{figure}
+		}
+		\only<4>{
+			\begin{figure}
+				\includegraphics[width=.8\linewidth]{connection_virtual}
+				\caption{Schema einer virtuellen Verbindung (virtuelle Ansicht)}
+			\end{figure}
 		}
 	\end{frame}
 
-	\subsection{Vor- und Nachteile}
-	\begin{frame}{Vor- und Nachteile \hyperlink{ref:openvpn}{[7]}}
-		\only<1-3,6-7>{
+	\subsection{TUN vs. TAP}
+	\begin{frame}{TUN vs. TAP \hyperlink{ref:openvpn}{[7]}}
+		\only<1,4,5,8,9>{
 			\begin{multicols*}{2}
 				\textbf{TAP --  Terminal Access Point}\\
 				$ \sim $ Ethernet $ \sim $ Layer 2
 				\begin{itemize}
-					\visible<2->{
+					\visible<4->{
 						\item[$ \oplus $] verhält sich wie echter Netzwerkadapter
 						\item[$ \oplus $] flexible Protokollwahl
 						\item[$ \oplus $] Bridging möglich
 					}
-					\visible<3->{
+					\visible<5->{
 						\item[$ \ominus $] viel Overhead (Ethernet-Header, Broadcast)
 						\item[$ \ominus $] skaliert schlecht
 						\item[$ \ominus $] kein Support bei Android, iOS
@@ -105,11 +132,11 @@
 				\textbf{TUN -- Netzwerk-Tunnel}\\
 				$ \sim $ IP $ \sim $ Layer 3
 				\begin{itemize}
-					\visible<6->{
+					\visible<8->{
 						\item[$ \oplus $] weniger Overhead (kein Ethernet-Header, kein Broadcast)
 						\item[$ \oplus $] nur Layer-3-Pakete
 					}
-					\visible<7->{
+					\visible<9->{
 						\item[$ \ominus $] nur Layer-3-Pakete
 						\item[$ \ominus $] keine Broadcasts
 						\item[$ \ominus $] kein Bridging möglich
@@ -118,91 +145,143 @@
 				\end{itemize}
 			\end{multicols*}
 		}
-	\only<4>{
-		\centering \includegraphics[width=\linewidth]{tap_physical}
-	}
-	\only<5>{
-		\centering \includegraphics[width=\linewidth]{tap_virtual}
-	}
-	\only<8>{
-		\centering \includegraphics[width=\linewidth]{tun_physical}
-	}
-	\only<9>{
-		\centering \includegraphics[width=\linewidth]{tun_virtual}
-	}
+		\only<2>{
+			\begin{figure}
+				\includegraphics[width=.9\linewidth]{tap_physical}
+				\caption{Anwendungsbeispiel TAP (physische Ansicht)}
+			\end{figure}
+		}
+		\only<3>{
+			\begin{figure}
+				\includegraphics[width=.9\linewidth]{tap_virtual}
+				\caption{Anwendungsbeispiel TAP (virtuelle Ansicht)}
+			\end{figure}
+		}
+		\only<6>{
+			\begin{figure}
+				\includegraphics[width=.9\linewidth]{tun_physical}
+				\caption{Anwendungsbeispiel TUN (physische Ansicht)}
+			\end{figure}
+		}
+		\only<7>{
+			\begin{figure}
+				\includegraphics[width=.9\linewidth]{tun_virtual}
+				\caption{Anwendungsbeispiel TUN (virtuelle Ansicht)}
+			\end{figure}
+		}
 	\end{frame}
 
-	\section{Funktionsweise}
-	\subsection{Set Up}
-	\begin{frame}{Set Up}
-		\only<1,6>{
-			Interface erzeugen (erfordert CAP\_NET\_ADMIN capability):
+	\section{Implementierung in Linux}
+	\subsection{Wichtige Adressen}
+	\begin{frame}{Wichtige Adressen}
+		\begin{itemize}
+			\setlength\itemsep{.3cm}
+			\item Kernel-Code:\\
+			\url{https://github.com/torvalds/linux.git}
 			
+			\item TUN / TAP (Driver):\\
+			\texttt{/linux/drivers/net/tun.c}
+			
+			\item Clone Device:\\
+			\texttt{/dev/net/tun}
+			
+			\item diese Präsentation und Code:\\
+			\url{https://github.com/lucaswzyk/pres_tun_tap.git}
+		\end{itemize}
+	\end{frame}
+	
+	\subsection{Aufbau -- Nutzung -- Abbau}
+	\begin{frame}{Aufbau}
+		\only<1,6>{
+			Aufbau eines Interfaces (erfordert CAP\_NET\_ADMIN capability):
+			\vspace{.3cm}
 			\begin{enumerate}
-				\item \texttt{/dev/net/tun} (Clone Device) öffnen (r, w)
-				\item Systemaufruf: \texttt{ioctl(fd, TUNSETIFF, options)}
-				\item ggf. persistent einrichten
+				\setlength\itemsep{.3cm}
+				\item öffne \texttt{/dev/net/tun} (Clone Device) mit Lese-Schreibberechtigung
+				\item rufe syscall \texttt{ioctl(fd, TUNSETIFF, if\_req\_struct)} auf
+				\visible<6>{
+					\item persistiere Gerät (ggf.)
+					\item weise IP-Adresse(n) zu
+				}
 			\end{enumerate}
-			\visible<6>{
-				\vspace{.3cm}
-				VPN Anwendung anbinden:
-				
+		}
+		\only<2>{
+			\begin{figure}
+				\includegraphics[width=\textwidth]{open_tun01}
+				\caption{Aufbau eines Virtual Network Interfaces (1 / 4)}
+			\end{figure}
+		}
+		\only<3>{
+			\begin{figure}
+				\includegraphics[width=\textwidth]{open_tun02}
+				\caption{Aufbau eines Virtual Network Interfaces (2 / 4)}
+			\end{figure}
+		}
+		\only<4>{
+			\begin{figure}
+				\includegraphics[width=\textwidth]{open_tun03}
+				\caption{Aufbau eines Virtual Network Interfaces (3 / 4)}
+			\end{figure}
+		}
+		\only<5>{
+			\begin{figure}
+				\includegraphics[width=\textwidth]{open_tun04}
+				\caption{Aufbau eines Virtual Network Interfaces (4 / 4)}
+			\end{figure}
+		}
+	\end{frame}
+
+	\begin{frame}{Nutzung und Abbau}
+		\only<1,3>{
+			Nutzung:
+			
+			\begin{itemize}
+				\item binde Anwendung an Interface
 				\begin{itemize}
 					\item wiederhole obiges als beliebiger Nutzer
 					\item nutze bestehenden Interface-Namen
 				\end{itemize}
+				\item Lesen und Schreiben mittels \texttt{fd}
+			\end{itemize}
+			\vspace{.5cm}
+			
+			\visible<3>{
+				Abbau:
+				
+				\begin{itemize}
+					\item transientes Gerät verschwindet mit Beenden des Erzeuger-Prozesses
+					\item persisitentes Gerät muss aktiv abgebaut werden (syscall)
+				\end{itemize}
 			}
 		}
-		\only<2>{\centering \includegraphics[width=\textwidth]{open_tun01}}
-		\only<3>{\centering \includegraphics[width=\textwidth]{open_tun02}}
-		\only<4>{\centering \includegraphics[width=\textwidth]{open_tun03}}
-		\only<5>{\centering \includegraphics[width=\textwidth]{open_tun04}}
-	\end{frame}
-
-	\subsection{Workflow}
-	\begin{frame}{Workflow}
-		\only<1>{
-			\begin{itemize}
-				\item 
-				
-				\item Vorteile
-				\begin{itemize}
-					\item gut konfigurierbar
-					\item verhält sich wie echter Netzwerkadapter
-				\end{itemize}
-				\item Nachteile
-				\begin{itemize}
-					\item ineffizient
-					\item langsamer als Heimnetz (schwächstes Glied)
-				\end{itemize}
-			\end{itemize}
-		}
 		\only<2>{
-			\centering \includegraphics[width=.8\textwidth]{interfaces02}%
+			\begin{figure}
+				\includegraphics[width=.77\textwidth]{interfaces02}
+				\caption{Network Interfaces (physisch und virtuell) relativ zu Gerät und Netz am Beispiel}
+			\end{figure}
 		}
 	\end{frame}
 
-	\subsection{Tear Down}
-	\begin{frame}{Tear Down}
-		\begin{itemize}
-			\item \emph{transientes} Gerät verschwindet bei Beenden der angebundenen Anwendung
-			\item \emph{persistentes} Gerät muss aktiv abgebaut werden
-		\end{itemize}
-	\end{frame}
-
-	\section{Implementierung}
-	\subsection{Wo findet man das?}
-	\begin{frame}{Wo findet man das?}
-		\begin{itemize}
-			\item Kernel-Code: \url{https://github.com/torvalds/linux.git}
-			\item TUN: \texttt{/linux/drivers/net/tun.c}
-			\item Clone Device: \texttt{/dev/net/tun}
-		\end{itemize}
-	\end{frame}
-	
-	\subsection{Code}
-	\begin{frame}{Code}
-		etwa drei Folien
+	\subsection{Umsetzung als Structs}
+	\begin{frame}[fragile]{Umsetzung als Structs}
+		Auszug aus \texttt{/linux/drivers/net/tun.c}:
+		
+		\hspace{-5cm}
+		\begin{minipage}{\textwidth}
+			\begin{lstlisting}
+			struct tun_struct {
+				struct tun_file __rcu *tfiles[MAX_TAP_QUEUES];
+				unsigned int flags;
+				kuid_t owner;
+				kuid_t group;
+				struct net_device *dev;
+			}
+			
+			struct tun_file {
+				struct tun_struct __rcu *tun;
+			}
+			\end{lstlisting}
+		\end{minipage}
 	\end{frame}
 
 	\section{Quellen}
