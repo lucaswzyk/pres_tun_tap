@@ -23,6 +23,7 @@
  * Read 84 bytes from device tun77
  * Read 84 bytes from device tun77
  * Read 84 bytes from device tun77
+ * (For me, there were also some 48 byte packages I could not quite explain.)
  * 
  * author: lucaswzyk
  */
