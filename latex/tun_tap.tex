@@ -44,9 +44,9 @@
 	\mode<presentation>{\setbeamertemplate{page number in footline}[frame][text and total]}
 	\frame{\frametitle{Inhalt}\tableofcontents}
 	
-	\section{Übersicht}
-	\subsection{Rückblick Network Interfaces}
-	\begin{frame}{Rückblick Network Interfaces}
+	\section{1. Übersicht}
+	\subsection{a. Network Interfaces}
+	\begin{frame}{Network Interfaces (sh. \hyperlink{ref:rene}{[1]})}
 		\only<1,2,4->{
 			\begin{multicols}{2}
 				\begin{itemize}
@@ -76,7 +76,7 @@
 		}
 	\end{frame}
 
-	\subsection{Generelles zu TUN und TAP}
+	\subsection{b. Generelles zu TUN und TAP}
 	\begin{frame}{Generelles zu TUN und TAP}
 		\only<1,2,5->{
 			\begin{itemize}
@@ -111,8 +111,8 @@
 		}
 	\end{frame}
 
-	\subsection{TUN vs. TAP}
-	\begin{frame}{TUN vs. TAP \hyperlink{ref:openvpn}{[7]}}
+	\subsection{c. TUN vs. TAP}
+	\begin{frame}{TUN vs. TAP (sh. \hyperlink{ref:openvpn}{[7]})}
 		\only<1,4,5,8,9>{
 			\begin{multicols*}{2}
 				\textbf{TAP --  Terminal Access Point}\\
@@ -124,8 +124,8 @@
 						\item[$ \oplus $] Bridging möglich
 					}
 					\visible<5->{
-						\item[$ \ominus $] viel Overhead (Ethernet-Header, Broadcast)
-						\item[$ \ominus $] skaliert schlecht
+						\item[$ \ominus $] Overhead (Ethernet-Header, Broadcast)
+						\item[$ \ominus $] skaliert schlechter als TUN
 						\item[$ \ominus $] kein Support bei Android, iOS
 					}
 				\vspace{3cm}
@@ -172,8 +172,8 @@
 		}
 	\end{frame}
 
-	\section{Implementierung in Linux}
-	\subsection{Wichtige Adressen}
+	\section{2. Implementierung in Linux}
+	\subsection{a. Wichtige Adressen}
 	\begin{frame}{Wichtige Adressen}
 		\begin{itemize}
 			\setlength\itemsep{.3cm}
@@ -191,8 +191,8 @@
 		\end{itemize}
 	\end{frame}
 	
-	\subsection{Aufbau -- Nutzung -- Abbau}
-	\begin{frame}{Aufbau}
+	\subsection{b. Aufbau -- Nutzung -- Abbau}
+	\begin{frame}{Aufbau (sh. \hyperlink{ref:backref}{[2]})}
 		\only<1,6>{
 			Aufbau eines Interfaces (erfordert CAP\_NET\_ADMIN capability):
 			\vspace{.3cm}
@@ -232,7 +232,7 @@
 		}
 	\end{frame}
 
-	\begin{frame}{Nutzung und Abbau}
+	\begin{frame}{Nutzung und Abbau (sh. \hyperlink{ref:backref}{[2]})}
 		\only<1,3>{
 			Nutzung:
 			
@@ -251,7 +251,7 @@
 				
 				\begin{itemize}
 					\item transientes Gerät verschwindet mit Beenden des Erzeuger-Prozesses
-					\item persisitentes Gerät muss aktiv abgebaut werden (syscall)
+					\item persistentes Gerät muss aktiv abgebaut werden (syscall)
 				\end{itemize}
 			}
 		}
@@ -263,7 +263,7 @@
 		}
 	\end{frame}
 
-	\subsection{Umsetzung als Structs}
+	\subsection{c. Umsetzung als Structs}
 	\begin{frame}[fragile]{Umsetzung als Structs}
 		Auszug aus \texttt{/linux/drivers/net/tun.c}:
 		
@@ -285,7 +285,7 @@
 		\end{minipage}
 	\end{frame}
 
-	\subsection{Simples Code-Beispiel}
+	\subsection{d. Simples Code-Beispiel}
 	\begin{frame}{Simples Code-Beispiel}
 		\begin{itemize}
 			\setlength\itemsep{.3cm}
@@ -297,11 +297,11 @@
 		\end{itemize}
 	\end{frame}
 
-	\section{Quellen}
+	\section{3. Quellen}
 	\begin{frame}{Quellen}
 		\begin{enumerate}
 			\item[{[1]}] Skript und Übungsaufgaben der Vorlesung Rechnernetze, TU Dresden 2019 \label{ref:rene}
-			\item[{[2]}] \url{https://backreference.org/2010/03/26/tuntap-interface-tutorial/}
+			\item[{[2]}] \url{https://backreference.org/2010/03/26/tuntap-interface-tutorial/} \label{ref:backref}
 			\item[{[3]}] \url{https://www.elektronik-kompendium.de/sites/net/0811011.htm}
 			\item[{[4]}] \url{https://en.wikipedia.org/wiki/TUN/TAP}
 			\item[{[5]}] \url{https://www.thomas-krenn.com/de/wiki/OpenVPN_Grundlagen}

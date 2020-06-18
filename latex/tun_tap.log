@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.5.2)  25 MAY 2020 20:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.5.2)  18 JUN 2020 23:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1546,7 +1546,7 @@ Package pdftex.def Info: DDC_Logo_110x50_4C.pdf  used on input line 77.
 [5
 
 ]
-<interfaces01.png, id=240, 1369.115pt x 704.6325pt>
+<interfaces01.png, id=244, 1369.115pt x 704.6325pt>
 File: interfaces01.png Graphic file (type png)
 <use interfaces01.png>
 Package pdftex.def Info: interfaces01.png  used on input line 77.
@@ -1601,7 +1601,7 @@ Package pdftex.def Info: DDC_Logo_110x50_4C.pdf  used on input line 112.
  [9
 
 ]
-<connection_physical.png, id=349, 1045.9075pt x 523.9575pt>
+<connection_physical.png, id=357, 1045.9075pt x 523.9575pt>
 File: connection_physical.png Graphic file (type png)
 <use connection_physical.png>
 Package pdftex.def Info: connection_physical.png  used on input line 112.
@@ -1617,7 +1617,7 @@ Package pdftex.def Info: DDC_Logo_110x50_4C.pdf  used on input line 112.
  [10
 
  <./connection_physical.png>]
-<connection_virtual.png, id=377, 1045.9075pt x 523.9575pt>
+<connection_virtual.png, id=385, 1045.9075pt x 523.9575pt>
 File: connection_virtual.png Graphic file (type png)
 <use connection_virtual.png>
 Package pdftex.def Info: connection_virtual.png  used on input line 112.
@@ -1676,7 +1676,7 @@ Package pdftex.def Info: DDC_Logo_110x50_4C.pdf  used on input line 173.
 [13
 
 ]
-<tap_physical.png, id=460, 1666.225pt x 764.8575pt>
+<tap_physical.png, id=468, 1666.225pt x 764.8575pt>
 File: tap_physical.png Graphic file (type png)
 <use tap_physical.png>
 Package pdftex.def Info: tap_physical.png  used on input line 173.
@@ -1696,7 +1696,7 @@ Package pdftex.def Info: DDC_Logo_110x50_4C.pdf  used on input line 173.
 [14
 
  <./tap_physical.png>]
-<tap_virtual.png, id=490, 1666.225pt x 764.8575pt>
+<tap_virtual.png, id=499, 1666.225pt x 764.8575pt>
 File: tap_virtual.png Graphic file (type png)
 <use tap_virtual.png>
 Package pdftex.def Info: tap_virtual.png  used on input line 173.
@@ -1746,7 +1746,7 @@ Package pdftex.def Info: DDC_Logo_110x50_4C.pdf  used on input line 173.
 [17
 
 ]
-<tun_physical.png, id=577, 1686.3pt x 764.8575pt>
+<tun_physical.png, id=585, 1686.3pt x 764.8575pt>
 File: tun_physical.png Graphic file (type png)
 <use tun_physical.png>
 Package pdftex.def Info: tun_physical.png  used on input line 173.
@@ -1766,7 +1766,7 @@ Package pdftex.def Info: DDC_Logo_110x50_4C.pdf  used on input line 173.
 [18
 
  <./tun_physical.png>]
-<tun_virtual.png, id=608, 1688.3075pt x 764.8575pt>
+<tun_virtual.png, id=616, 1688.3075pt x 764.8575pt>
 File: tun_virtual.png Graphic file (type png)
 <use tun_virtual.png>
 Package pdftex.def Info: tun_virtual.png  used on input line 173.
@@ -1942,7 +1942,7 @@ Package pdftex.def Info: DDC_Logo_110x50_4C.pdf  used on input line 233.
  [24
 
 ]
-<open_tun01.png, id=782, 1487.5575pt x 604.2575pt>
+<open_tun01.png, id=793, 1487.5575pt x 604.2575pt>
 File: open_tun01.png Graphic file (type png)
 <use open_tun01.png>
 Package pdftex.def Info: open_tun01.png  used on input line 233.
@@ -1958,7 +1958,7 @@ Package pdftex.def Info: DDC_Logo_110x50_4C.pdf  used on input line 233.
  [25
 
  <./open_tun01.png>]
-<open_tun02.png, id=811, 1487.5575pt x 604.2575pt>
+<open_tun02.png, id=824, 1487.5575pt x 604.2575pt>
 File: open_tun02.png Graphic file (type png)
 <use open_tun02.png>
 Package pdftex.def Info: open_tun02.png  used on input line 233.
@@ -1974,7 +1974,7 @@ Package pdftex.def Info: DDC_Logo_110x50_4C.pdf  used on input line 233.
  [26
 
  <./open_tun02.png>]
-<open_tun03.png, id=840, 1487.5575pt x 604.2575pt>
+<open_tun03.png, id=855, 1487.5575pt x 604.2575pt>
 File: open_tun03.png Graphic file (type png)
 <use open_tun03.png>
 Package pdftex.def Info: open_tun03.png  used on input line 233.
@@ -1990,7 +1990,7 @@ Package pdftex.def Info: DDC_Logo_110x50_4C.pdf  used on input line 233.
  [27
 
  <./open_tun03.png>]
-<open_tun04.png, id=868, 1487.5575pt x 604.2575pt>
+<open_tun04.png, id=885, 1487.5575pt x 604.2575pt>
 File: open_tun04.png Graphic file (type png)
 <use open_tun04.png>
 Package pdftex.def Info: open_tun04.png  used on input line 233.
@@ -2028,7 +2028,7 @@ Package pdftex.def Info: DDC_Logo_110x50_4C.pdf  used on input line 264.
  [30
 
 ]
-<interfaces02.png, id=947, 1369.115pt x 704.6325pt>
+<interfaces02.png, id=970, 1369.115pt x 704.6325pt>
 File: interfaces02.png Graphic file (type png)
 <use interfaces02.png>
 Package pdftex.def Info: interfaces02.png  used on input line 264.
@@ -2226,17 +2226,17 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 313.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 313.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 313.
 Package rerunfilecheck Info: File `tun_tap.out' has not changed.
-(rerunfilecheck)             Checksum: BAF36856128E9AA9CAD3DCD3AF04F6FB;653.
+(rerunfilecheck)             Checksum: 5ABC8BDC054768B18329D1CE6F92F2B2;670.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 27234 strings out of 492167
- 514189 string characters out of 6131559
+ 27236 strings out of 492167
+ 514213 string characters out of 6131559
  801535 words of memory out of 5000000
- 30887 multiletter control sequences out of 15000+600000
+ 30888 multiletter control sequences out of 15000+600000
  25987 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,19n,96p,804b,1208s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2248,10 +2248,10 @@ pensans/OpenSans-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 ></usr/share/texmf-dist/fonts/type1/public/marvosym/marvosym.pfb></usr/share/te
 xmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on tun_tap.pdf (37 pages, 749601 bytes).
+Output written on tun_tap.pdf (37 pages, 756298 bytes).
 PDF statistics:
- 1191 PDF objects out of 1200 (max. 8388607)
- 1072 compressed objects within 11 object streams
- 87 named destinations out of 1000 (max. 500000)
+ 1218 PDF objects out of 1440 (max. 8388607)
+ 1086 compressed objects within 11 object streams
+ 88 named destinations out of 1000 (max. 500000)
  227 words of extra memory for PDF output out of 10000 (max. 10000000)
 
